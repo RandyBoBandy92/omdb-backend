@@ -13,9 +13,9 @@ app.get("/", (req, res) => {
 });
 
 // if the user searches for a movie and provides a query, we pass the query to the api
-app.get("/search/:query", async (req, res) => {
-  const query = req.params.query;
-  const data = await searchMovies(query);
+app.get("/search/:query/:page", async (req, res) => {
+  const { query, page } = req.params;
+  const data = await searchMovies(query, page);
   if (data) {
     res.json(data);
   } else {
