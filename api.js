@@ -7,7 +7,7 @@ const searchMovies = async (query) => {
   const url = `${baseUrl}s=${query}`;
   try {
     const response = await axios.get(url);
-    return response.data.Search;
+    return response.data;
   } catch (error) {
     console.log(error);
   }

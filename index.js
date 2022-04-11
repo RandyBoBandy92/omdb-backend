@@ -17,7 +17,7 @@ app.get("/search/:query", async (req, res) => {
   const query = req.params.query;
   const data = await searchMovies(query);
   if (data) {
-    res.send(data);
+    res.json(data);
   } else {
     res.status(404).send("Resource not found");
   }
