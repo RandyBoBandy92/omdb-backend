@@ -8,8 +8,10 @@ app.use(cors());
 const PORT = 5000;
 
 app.get("/", (req, res) => {
-  console.log("hi");
-  res.send("Hello World!");
+  res.json({
+    message: "Welcome to the OMDB-Backend API",
+    howToUse: "/search/<query>/<page>",
+  });
 });
 
 // if the user searches for a movie and provides a query, we pass the query to the api
